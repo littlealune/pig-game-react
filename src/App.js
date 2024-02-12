@@ -52,6 +52,8 @@ function App() {
     }
   }, [diceNumber])
 
+  const finishedPlaying = Math.max(...score) >= 100 ? true : false
+
   return (
     <main>
       <Player
@@ -76,10 +78,10 @@ function App() {
       <button className="btn btn--new" onClick={handleNewGame}>
         🔄 New game
       </button>
-      <button className="btn btn--roll" onClick={handleRollDice}>
+      <button className="btn btn--roll" onClick={handleRollDice} disabled={finishedPlaying}>
         🎲 Roll dice
       </button>
-      <button className="btn btn--hold" onClick={handleHold}>
+      <button className="btn btn--hold" onClick={handleHold} disabled={finishedPlaying}>
         📥 Hold
       </button>
     </main>
