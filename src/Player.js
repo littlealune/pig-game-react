@@ -21,11 +21,12 @@ function Player({ name, score, current, isActive }) {
 
     
 
-    const classPlayer = isActive 
-        ? score >= 100
+    const classPlayer = 
+         score >= 100
             ? 'player player--winner'
-            :'player player--active'
-        : 'player'
+            : isActive
+            ?'player player--active'
+            : 'player'
 
     // const classPlayer = isActive ? 'player player--active' : 'player'
 
